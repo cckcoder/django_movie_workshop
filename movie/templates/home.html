@@ -21,7 +21,16 @@
       </form>
       <div class="mt-2">
         Searching for {{ searchTerm }}
+        {% for movie in movies %}
+          <h2>{{ movie.title }}</h2>
+          <h2>{{ movie.description }}</h2>
+          <img src="{{ movie.image.url }}">
+          {% if movie.url %}
+            <a href="{{ movie.url }}">Movie Link</a>
+          {% endif %}
+        {% endfor %}
       </div>
+
       <br>
       <br>
       <h2>Join our mailing list:</h2>
